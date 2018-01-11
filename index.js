@@ -11,10 +11,10 @@ module.exports = {
         a = $(a);
         var text = a.text();
         if (re.test(text)) {
-          text = text
+          var innerHTML = a.html()
             .replace(/^\s*\[ \]\s*/, '<input type="checkbox" disabled="disabled"></i> ')
             .replace(/^\s*\[x\]\s*/, '<input type="checkbox" disabled="disabled" checked="checked"></i> ');
-          a.replaceWith('<li style="list-style: none">' + text + '</li>');
+          a.replaceWith('<li style="list-style: none">' + innerHTML + '</li>');
         }
       });
       page.content = $.html();
